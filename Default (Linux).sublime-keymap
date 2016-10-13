@@ -1,0 +1,143 @@
+[
+  // Manage AZERTY layout
+  // Replace : Mostly replace original sign by the one directly accessible on the same key (ex: "."=";" , "["="(" , etc)
+  //           For numbers, use numpad numbers
+  //           Toogle comment use "ctrl+<" (one-hand toggle for right-hand writter, use "ctrl+:" for left-hand writter)
+  
+  { "keys": ["ctrl+<"]      , "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["ctrl+shift+<"], "command": "toggle_comment", "args": { "block": true } },
+
+  { "keys": ["ctrl+)"]      , "command": "indent" },
+  { "keys": ["ctrl+("]      , "command": "unindent" },
+  { "keys": ["alt+;"]       , "command": "close_tag" },
+  { "keys": ["ctrl+è"]      , "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+  { "keys": ["alt+:"]       , "command": "auto_complete" },
+  { "keys": ["alt+:"]       , "command": "replace_completion_with_auto_complete", "context":
+    [
+      { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+      { "key": "setting.tab_completion", "operator": "equal", "operand": true }
+    ]
+  },
+
+  {
+    "keys": ["alt+shift+keypad1"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1]]
+    }
+  },
+  {
+    "keys": ["alt+shift+keypad2"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.5, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+    }
+  },
+{
+    "keys": ["alt+shift+keypad3"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.33, 0.66, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+    }
+  },
+  {
+    "keys": ["alt+shift+keypad4"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+    }
+  },
+  {
+    "keys": ["alt+shift+keypad8"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 0.5, 1.0],
+      "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+    }
+  },
+  {
+    "keys": ["alt+shift+keypad9"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 0.33, 0.66, 1.0],
+      "cells": [[0, 0, 1, 1], [0, 1, 1, 2], [0, 2, 1, 3]]
+    }
+  },
+  {
+    "keys": ["alt+shift+keypad5"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.5, 1.0],
+      "rows": [0.0, 0.5, 1.0],
+      "cells":
+      [
+        [0, 0, 1, 1], [1, 0, 2, 1],
+        [0, 1, 1, 2], [1, 1, 2, 2]
+      ]
+    }
+  },
+  { "keys": ["ctrl+keypad1"], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+keypad2"], "command": "focus_group", "args": { "group": 1 } },
+  { "keys": ["ctrl+keypad3"], "command": "focus_group", "args": { "group": 2 } },
+  { "keys": ["ctrl+keypad4"], "command": "focus_group", "args": { "group": 3 } },
+  { "keys": ["ctrl+keypad5"], "command": "focus_group", "args": { "group": 4 } },
+  { "keys": ["ctrl+keypad6"], "command": "focus_group", "args": { "group": 5 } },
+  { "keys": ["ctrl+keypad7"], "command": "focus_group", "args": { "group": 6 } },
+  { "keys": ["ctrl+keypad8"], "command": "focus_group", "args": { "group": 7 } },
+  { "keys": ["ctrl+keypad9"], "command": "focus_group", "args": { "group": 8 } },
+  { "keys": ["ctrl+shift+keypad1"], "command": "move_to_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+shift+keypad2"], "command": "move_to_group", "args": { "group": 1 } },
+  { "keys": ["ctrl+shift+keypad3"], "command": "move_to_group", "args": { "group": 2 } },
+  { "keys": ["ctrl+shift+keypad4"], "command": "move_to_group", "args": { "group": 3 } },
+  { "keys": ["ctrl+shift+keypad5"], "command": "move_to_group", "args": { "group": 4 } },
+  { "keys": ["ctrl+shift+keypad6"], "command": "move_to_group", "args": { "group": 5 } },
+  { "keys": ["ctrl+shift+keypad7"], "command": "move_to_group", "args": { "group": 6 } },
+  { "keys": ["ctrl+shift+keypad8"], "command": "move_to_group", "args": { "group": 7 } },
+  { "keys": ["ctrl+shift+keypad9"], "command": "move_to_group", "args": { "group": 8 } },
+  { "keys": ["ctrl+keypad0"], "command": "focus_side_bar" },
+
+  { "keys": ["alt+keypad1"], "command": "select_by_index", "args": { "index": 0 } },
+  { "keys": ["alt+keypad2"], "command": "select_by_index", "args": { "index": 1 } },
+  { "keys": ["alt+keypad3"], "command": "select_by_index", "args": { "index": 2 } },
+  { "keys": ["alt+keypad4"], "command": "select_by_index", "args": { "index": 3 } },
+  { "keys": ["alt+keypad5"], "command": "select_by_index", "args": { "index": 4 } },
+  { "keys": ["alt+keypad6"], "command": "select_by_index", "args": { "index": 5 } },
+  { "keys": ["alt+keypad7"], "command": "select_by_index", "args": { "index": 6 } },
+  { "keys": ["alt+keypad8"], "command": "select_by_index", "args": { "index": 7 } },
+  { "keys": ["alt+keypad9"], "command": "select_by_index", "args": { "index": 8 } },
+  { "keys": ["alt+keypad0"], "command": "select_by_index", "args": { "index": 9 } },
+
+  { "keys": ["ctrl+shift+keypad_minus"]     , "command": "fold" },
+  { "keys": ["ctrl+shift+keypad_plus"]      , "command": "unfold" },
+  { "keys": ["ctrl+k", "ctrl+keypad1"]      , "command": "fold_by_level", "args": {"level": 1} },
+  { "keys": ["ctrl+k", "ctrl+keypad2"]      , "command": "fold_by_level", "args": {"level": 2} },
+  { "keys": ["ctrl+k", "ctrl+keypad3"]      , "command": "fold_by_level", "args": {"level": 3} },
+  { "keys": ["ctrl+k", "ctrl+keypad4"]      , "command": "fold_by_level", "args": {"level": 4} },
+  { "keys": ["ctrl+k", "ctrl+keypad5"]      , "command": "fold_by_level", "args": {"level": 5} },
+  { "keys": ["ctrl+k", "ctrl+keypad6"]      , "command": "fold_by_level", "args": {"level": 6} },
+  { "keys": ["ctrl+k", "ctrl+keypad7"]      , "command": "fold_by_level", "args": {"level": 7} },
+  { "keys": ["ctrl+k", "ctrl+keypad8"]      , "command": "fold_by_level", "args": {"level": 8} },
+  { "keys": ["ctrl+k", "ctrl+keypad9"]      , "command": "fold_by_level", "args": {"level": 9} },
+  { "keys": ["ctrl+f10"] , "command": "unfold_all" },
+  { "keys": ["f10"]      , "command": "fold_all" },
+
+]
